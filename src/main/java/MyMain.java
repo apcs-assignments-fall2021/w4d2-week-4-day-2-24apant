@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class MyMain {
     // Arrays Basics Problem 1:
@@ -12,7 +13,11 @@ public class MyMain {
     //    int[] arr3 = addArrays3(arr1, arr2); // arr3 = [3, 7, 11]
     public static int[] addArrays3(int[] arr1, int[] arr2) {
         // REPLACE THIS WITH YOUR CODE
-        return null;
+        int[] newArr = new int[arr1.length];
+        for(int i = 0; i < arr1.length;i++){
+            newArr[i] = arr1[i] + arr2[i];
+        }
+        return newArr;
     }
 
     // Arrays Basics Problem 2:
@@ -24,7 +29,16 @@ public class MyMain {
     // double[] arr2 = average3(arr1); // arr2 = [3.0, 3.0, 3.0]
     public static double[] average3(int[] arr) {
         // REPLACE THIS WITH YOUR CODE
-        return null;
+        double average = 0;
+        double[] retArr = new double[3];
+        for (int i = 0; i < 3; i ++){
+            average += arr[i];
+        }
+        average /= 3;
+        for (int i = 0; i < 3; i ++){
+            retArr[i] = average;
+        }
+        return retArr;
     }
 
     // Iteration Problem 1:
@@ -35,7 +49,11 @@ public class MyMain {
     // int x = sum(nums); // x = 40
     public static int sum(int[] arr) {
         // REPLACE THIS WITH YOUR CODE
-        return -1;
+        int x = 0;
+        for (int i = 0; i < arr.length; i ++){
+            x += arr[i];
+        }
+        return x;
     }
 
     // Iteration Problem 2:
@@ -46,7 +64,13 @@ public class MyMain {
     // int x = max(nums); // x = 9
     public static int max(int[] arr) {
         // REPLACE THIS WITH YOUR CODE
-        return -1;
+        int max = Integer.MIN_VALUE;
+        for (int i=0; i<arr.length; i++){
+            if (arr[i] > max){
+                max = arr[i];
+            }
+        }
+        return max;
     }
 
     // Challenge Problem:
@@ -58,7 +82,11 @@ public class MyMain {
     // makeRandomArray(10, 1, 5) => [4, 2, 3, 1, 5, 3, 4, 4, 1, 2]
     public static int[] makeRandomArray(int size, int lowest, int biggest) {
         // REPLACE THIS WITH YOUR CODE
-        return null;
+        int[] newArr = new int[size];
+        for(int i = 0; i < size; i ++){
+            newArr[i] = (int)Math.floor(Math.random()*(biggest-lowest+1)+lowest);
+        }
+        return newArr;
     }
 
 
